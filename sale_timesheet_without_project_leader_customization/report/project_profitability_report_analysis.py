@@ -71,7 +71,7 @@ class ProfitabilityAnalysis(models.Model):
                                 0.0 AS expense_cost,
                                 0.0 AS downpayment_invoiced
                             FROM account_analytic_line TS, project_project P
-                            WHERE TS.project_id IS NOT NULL AND P.id = TS.project_id AND P.active = 't' AND P.allow_timesheets = 't' AND P.user_id != TS.employee_id 
+                            WHERE TS.project_id IS NOT NULL AND P.id = TS.project_id AND P.active = 't' AND P.allow_timesheets = 't' AND P.user_id != TS.user_id 
                             GROUP BY P.id, TS.so_line
 
                             UNION
